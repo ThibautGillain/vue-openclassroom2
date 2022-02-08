@@ -116,7 +116,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
+  } 
 
   .description {
     max-width: 960px;
