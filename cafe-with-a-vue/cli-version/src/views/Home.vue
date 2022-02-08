@@ -18,6 +18,7 @@
         :image="item.image"
         :quantity="item.quantity"
         :inStock="item.inStock"
+        :price="item.price"
         :key="item.name"
       />
     </section>
@@ -65,6 +66,7 @@ export default {
             alt: 'A crossiant'
           },
           inStock: true,
+          price: 2.99,
           quantity: 1
         },
         {
@@ -74,6 +76,7 @@ export default {
             alt: 'Four French Baguettes'
           },
           inStock: true,
+          price: 3.99,
           quantity: 1
         },
         {
@@ -83,6 +86,7 @@ export default {
             alt: 'Chocolate Éclair'
           },
           inStock: false,
+          price: 3.99,
           quantity: 1
         }
       ]
