@@ -68,10 +68,12 @@ export default {
       <div>
         <label for="add-item-quantity">Quantity: {{ quantity }}</label>
         <input v-model.number="quantity" id="add-item-quantity" type="number" />
-        <BaseButton
+        <BaseButton>
           @click="updateShoppingCart(quantity)"
-          text="Add to shopping cart"
-        />
+          <template v-slot:text>
+            Add to shopping cart
+          </template>
+        </BaseButton>
       </div>
     </div>
   </div>

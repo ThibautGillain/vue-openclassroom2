@@ -1,7 +1,6 @@
 <script>
 export default {
   name: 'BaseButton',
-  props: ['text']
 }
 </script>
 
@@ -11,7 +10,7 @@ export default {
   Without it, Vue does not know where to listen
   for the events. -->
   <button v-on="$listeners">
-    {{ text }}
+    <slot name="text"> This is a button </slot>
   </button>
 </template>
 
