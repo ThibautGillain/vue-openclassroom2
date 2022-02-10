@@ -31,7 +31,7 @@ export default {
     <img class="menu-item__image" :src="image.source" :alt="image.alt" />
     <div>
       <h3>{{ name }}</h3>
-      <p> Price : {{ generatedPrice }} <span v-if="onSale">(10% off !)</span></p>
+      <p>Price: {{ generatedPrice }} <span v-if="onSale">(10% off!)</span></p>
       <p v-if="inStock">In Stock</p>
       <p v-else>Out of Stock</p>
       <div>
@@ -44,5 +44,3 @@ export default {
     </div>
   </div>
 </template>
-
-<style></style>
