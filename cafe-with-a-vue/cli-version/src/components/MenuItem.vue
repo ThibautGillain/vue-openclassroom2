@@ -4,9 +4,8 @@ export default {
   props: {
     addToShoppingCart: {
       type: Function,
-      required: true,
-      default: () => {}
-    }, 
+      required: true
+    },
     image: {
       type: Object,
       required: true
@@ -25,16 +24,14 @@ export default {
     },
     quantity: {
       type: Number,
-      default: 1
+      defaut: 1
     }
   },
-
   data() {
     return {
       onSale: false
     }
   },
-
   computed: {
     generatedPrice() {
       if (this.onSale) {
@@ -44,7 +41,16 @@ export default {
       }
     }
   },
-
+  methods: {
+    updateShoppingCart(amount) {
+      this.$emit(
+        'add-items-to-cart',
+        {
+          amount: amount
+        }
+      )
+    }
+  },
   beforeMount() {
     const today = new Date().getDate()
 
@@ -66,7 +72,7 @@ export default {
       <div>
         <label for="add-item-quantity">Quantity: {{ quantity }}</label>
         <input v-model.number="quantity" id="add-item-quantity" type="number" />
-        <button @click="addToShoppingCart(quantity)">
+        <button @click="updateShoppingCart(quantity)">
           Add to Shopping Cart
         </button>
       </div>
