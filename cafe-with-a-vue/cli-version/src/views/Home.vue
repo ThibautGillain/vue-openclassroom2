@@ -94,28 +94,28 @@ export default {
 }
 </script>
 
-<style>
-  .description {
-    max-width: 960px;
-    font-size: 1.2rem;
-    margin: 0 auto;
-  }
+<style lang="scss">
+.description {
+  max-width: 960px;
+  font-size: 1.2rem;
+  margin: 0 auto;
+}
 
-  .footer {
-    text-align: center;
-    font-style: italic;
-  }
+.footer {
+  font-style: italic;
+  text-align: center;
+}
 
-  .menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-  .shopping-cart {
-    position: absolute;
-    right: 30px;
-    top: 0;
-  }
+.shopping-cart {
+  position: absolute;
+  right: 30px;
+  top: 0;
+}
 </style>

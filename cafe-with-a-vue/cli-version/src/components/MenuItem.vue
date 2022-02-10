@@ -1,12 +1,40 @@
 <script>
 export default {
   name: 'MenuItem',
-  props: ['addToShoppingCart', 'image', 'inStock', 'name', 'price', 'quantity'],
+  props: {
+    addToShoppingCart: {
+      type: Function,
+      required: true,
+      default: () => {}
+    }, 
+    image: {
+      type: Object,
+      required: true
+    },
+    inStock: {
+      type: Boolean,
+      required: true
+    },
+    name: {
+      type: String,
+      required: true
+    },
+    price: {
+      type: Number,
+      required: true
+    },
+    quantity: {
+      type: Number,
+      default: 1
+    }
+  },
+
   data() {
     return {
       onSale: false
     }
   },
+
   computed: {
     generatedPrice() {
       if (this.onSale) {
@@ -16,6 +44,7 @@ export default {
       }
     }
   },
+
   beforeMount() {
     const today = new Date().getDate()
 
@@ -46,14 +75,14 @@ export default {
 </template>
 
 <style lang="scss">
-  .menu-item {
-    display: flex;
-    width: 500px;
-    justify-content: space-between;
-    margin-bottom: 30px;
-  }
+.menu-item {
+  display: flex;
+  width: 500px;
+  justify-content: space-between;
+  margin-bottom: 30px;
 
-  .menu-item__image {
+  &__image {
     max-width: 300px;
   }
+}
 </style>
