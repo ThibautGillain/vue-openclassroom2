@@ -1,11 +1,12 @@
 <script>
+import BaseButton from './BaseButton.vue'
+
 export default {
   name: 'MenuItem',
+  components: {
+    BaseButton
+  },
   props: {
-    addToShoppingCart: {
-      type: Function,
-      required: true
-    },
     image: {
       type: Object,
       required: true
@@ -42,13 +43,8 @@ export default {
     }
   },
   methods: {
-    updateShoppingCart(amount) {
-      this.$emit(
-        'add-items-to-cart',
-        {
-          amount: amount
-        }
-      )
+    updateShoppingCart(quantity) {
+      this.$emit('add-items-to-cart', quantity)
     }
   },
   beforeMount() {
@@ -72,9 +68,10 @@ export default {
       <div>
         <label for="add-item-quantity">Quantity: {{ quantity }}</label>
         <input v-model.number="quantity" id="add-item-quantity" type="number" />
-        <button @click="updateShoppingCart(quantity)">
-          Add to Shopping Cart
-        </button>
+        <BaseButton
+          @click="updateShoppingCart(quantity)"
+          text="Add to shopping cart"
+        />
       </div>
     </div>
   </div>
