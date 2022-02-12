@@ -5,8 +5,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    shoppingCart: 0,
     restaurantName: 'Cafe with A Vue',
+    shoppingCart: 0,
     simpleMenu: [
       {
         name: 'Crossiant',
@@ -43,13 +43,11 @@ export default new Vuex.Store({
   getters: {
     copyright: state => {
       const currentYear = new Date().getFullYear()
+
       return `Copyright ${state.restaurantName} ${currentYear}`
-    },
+    }
   },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
-  }
+  mutations: {},
+  actions: {},
+  modules: {}
 })

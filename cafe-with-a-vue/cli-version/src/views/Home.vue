@@ -43,8 +43,14 @@ export default {
     MenuItem
   },
   computed: {
-    ...mapGetters(['copyright']),
-    ...mapState(['restaurantName', 'shoppingCart', 'simpleMenu'])
+    ...mapGetters({
+      copyright: 'copyright'
+    }),
+    ...mapState({
+      restaurantName: 'restaurantName',
+      shoppingCart: 'shoppingCart',
+      simpleMenu: 'simpleMenu'
+    })
   },
   methods: {
     addToShoppingCart(amount) {
