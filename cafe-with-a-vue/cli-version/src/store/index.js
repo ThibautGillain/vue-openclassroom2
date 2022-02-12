@@ -43,11 +43,26 @@ export default new Vuex.Store({
   getters: {
     copyright: state => {
       const currentYear = new Date().getFullYear()
-
       return `Copyright ${state.restaurantName} ${currentYear}`
     }
   },
-  mutations: {},
-  actions: {},
+  mutations: {
+    INCREASE_SHOPPING_CART(state, amount = 1) {
+      state.shoppingCart += Number(amount)
+    },
+
+    DECREASE_SHOPPING_CART(state, amount=1) {
+      state.shoppingCart -= Number(amount)
+    }
+  },
+  actions: {
+    updateShoppingCart({ commit }, amount) {
+      if(amount >= 0) {
+        commit('INCREASE_SHOPPING_CART', amount)
+      } else {
+        commit('DECREASE_SHOPPING_CART', -amount)
+      }
+    }
+  },
   modules: {}
 })
